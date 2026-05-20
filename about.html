@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VYOM — About</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Outfit:wght@200;300;400;500&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="sky">
+    <div class="sky-gradient"></div>
+    <div class="cloud cloud-1"></div>
+    <div class="cloud cloud-2"></div>
+    <div class="cloud cloud-3"></div>
+    <div class="cloud cloud-4"></div>
+    <div class="stars"></div>
+  </div>
+
+  <nav class="nav">
+    <div class="nav-logo"><span class="logo-symbol">✦</span></div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html" class="nav-active">About</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+    </ul>
+    <button class="nav-cta" onclick="window.location='index.html'">Get VYOM+</button>
+    <!-- Hamburger (mobile only) -->
+    <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile drawer -->
+  <div class="mobile-nav-drawer" id="mobileDrawer">
+    <a href="index.html">Home</a>
+    <a href="about.html" class="nav-active">About</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="faq.html">FAQ</a>
+  </div>
+
+  <main class="inner-page">
+
+    <div class="page-header">
+      <p class="hero-eyebrow">OUR STORY</p>
+      <h1 class="page-title">About<br/><em>VYOM</em></h1>
+      <p class="hero-sub">Where the sky meets the search.</p>
+    </div>
+
+    <!-- What is VYOM -->
+    <div class="prose-section">
+      <h2>What is VYOM <span class="gold-dot">✦</span></h2>
+      <p>
+        <strong>VYOM</strong> — derived from the Sanskrit word for <em>sky</em> — is a browser homepage built around a single, liberating idea: that you should never be locked into one way of searching the web. Most browsers quietly decide which search engine you use and make switching needlessly complicated. VYOM puts that choice front and centre, beautifully.
+      </p>
+      <p>
+        At its heart, VYOM is a clean, distraction-free interface that lets you move between Google, Bing, DuckDuckGo, Brave, Yahoo and Ecosia with a single tap. No cluttered dashboards, no trackers dressed up as widgets — just the open horizon and a search bar waiting for your next question.
+      </p>
+    </div>
+
+    <hr class="prose-divider"/>
+
+    <!-- Why it exists -->
+    <div class="prose-section">
+      <h2>Why it exists <span class="gold-dot">✦</span></h2>
+      <p>
+        The web has never been more accessible — yet ironically, the first thing most people see when they open a new tab is chosen for them by a corporation with its own interests. VYOM exists to push back against that quietly. Search is personal. The engine you trust with your curiosity should be <em>your</em> decision, made effortlessly.
+      </p>
+      <p>
+        Beyond engine switching, VYOM is designed to be a calm, beautiful place to begin your time online. The sky aesthetic — deep midnight fading into a warm dawn — is intentional. It is a reminder that every search is a small act of exploration; every question, a flight into the unknown.
+      </p>
+      <div class="info-card">
+        <svg viewBox="0 0 24 24" fill="none" width="15" height="15"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M12 8v4M12 16h.01" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span>VYOM does <strong>not</strong> store, log, or monetise your searches. Your queries go directly to whichever engine you choose — VYOM never sees them.</span>
+      </div>
+    </div>
+
+    <hr class="prose-divider"/>
+
+    <!-- VYOM+ -->
+    <div class="prose-section">
+      <h2>VYOM+ <span class="gold-dot">✦</span></h2>
+      <p>
+        Coming soon, <strong>VYOM+</strong> will bring an AI-powered assistant into the homepage — letting you ask questions in natural language, get summaries, and think through ideas without switching tabs. VYOM+ is powered by <strong>OpenAI GPT</strong>, a third-party service; it is not developed or owned by VYOM or Satwik. Full transparency about the technology powering the features you use is a core value of this project.
+      </p>
+    </div>
+
+    <hr class="prose-divider"/>
+
+    <!-- About the creator -->
+    <div class="prose-section">
+      <h2>The Creator <span class="gold-dot">✦</span></h2>
+      <p>
+        VYOM was conceived, designed and built by one person with a belief that the web deserves more elegant, user-respecting tools. Every pixel, every cloud animation, every typographic choice was made deliberately — not generated by committee or optimised for engagement metrics.
+      </p>
+
+      <div class="creator-card">
+        <!-- Place pfp.png in the same folder as this file. If absent, the monogram shows. -->
+        <img src="pfp.jpeg" alt="Satwik" class="creator-pfp"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+        <div class="creator-pfp-placeholder" style="display:none">S</div>
+
+        <div class="creator-info">
+          <h3>Satwik</h3>
+          <p class="creator-role">Designer &amp; Developer · VYOM</p>
+          <p>
+            A developer with an eye for design and a frustration with the ordinary. Satwik built VYOM as a personal project that grew into something worth sharing — a browser start page that respects your intelligence, your time, and your right to choose. If you have feedback, questions, or just want to say hello, the FAQ page has a direct line.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <p>We believe the sky should be <em>limitless</em> — for every search, for everyone.</p>
+    <span class="footer-credit">Crafted with ✦ by <strong>Satwik</strong></span>
+    <span class="footer-copy">© 2026 VYOM</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
