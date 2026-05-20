@@ -586,7 +586,7 @@ body { font-family: var(--font-sans); background: #0a0c1a; color: var(--white); 
 /* Mobile dropdown drawer */
 .mobile-nav-drawer {
   display:none;
-  position:fixed;top:64px;right:16px;z-index:150;
+  position:fixed;top:62px;right:16px;z-index:150;
   background:rgba(10,14,42,.92);
   border:1px solid rgba(255,255,255,.14);
   border-radius:12px;padding:8px 0;
@@ -612,16 +612,41 @@ body { font-family: var(--font-sans); background: #0a0c1a; color: var(--white); 
 
 /* ── RESPONSIVE ── */
 @media(max-width:768px){
-  .nav { padding:14px 20px; }
-  .nav-links { display:none; }    /* hidden on mobile — drawer replaces */
-  .hamburger { display:flex; }
-  .hero { padding:100px 20px 60px; }
+  /* Nav: logo left, hamburger right only — hide desktop links & CTA button */
+  .nav {
+    padding: 12px 18px;
+    min-height: 60px;
+  }
+  .nav-links  { display:none; }
+  .nav-cta    { display:none; }   /* GET VYOM+ moves into drawer on mobile */
+  .hamburger  { display:flex; }
+
+  /* Hero: push well below the 60px nav bar */
+  .hero {
+    padding: 90px 20px 60px;
+    justify-content: flex-start;
+    padding-top: max(90px, calc(60px + 5vh));
+  }
+
+  /* Slightly smaller VYOM title so it doesn't overflow */
+  .hero-title { font-size: clamp(72px, 22vw, 120px); }
+
   .engine-tabs { gap:4px; }
-  .engine-tab { padding:6px 12px;font-size:11.5px; }
+  .engine-tab  { padding:6px 10px; font-size:11px; }
   .search-form { max-width:100%; }
+
   .plus-content { padding:44px 28px 36px; }
-  .inner-page { padding:120px 20px 50px; }
+
+  /* Inner pages: same safe top padding */
+  .inner-page { padding: max(90px, calc(60px + 4vh)) 20px 50px; }
+
   .creator-card { flex-direction:column;align-items:flex-start;padding:28px 24px;gap:24px; }
-  .results-engine-pills { display:none; }   /* too cramped on mobile */
+  .results-engine-pills { display:none; }
   .dev-splash-inner { padding:36px 24px 30px; }
+}
+
+/* Very small phones (≤380px) */
+@media(max-width:380px){
+  .hero-title { font-size: 68px; }
+  .engine-tab { padding:5px 8px; font-size:10.5px; }
 }
