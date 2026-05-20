@@ -183,7 +183,7 @@ body { font-family: var(--font-sans); background: #0a0c1a; color: var(--white); 
 /* Prussian blue for Satwik name */
 .footer-credit strong {
   font-weight:600;
-  color:var(--prussian-light);
+  color:var(--white-fade);
   font-family:var(--font-display);font-style:italic;font-size:15px;
   text-shadow:0 0 18px rgba(26,79,120,.7),0 1px 6px rgba(0,0,0,.4);
 }
