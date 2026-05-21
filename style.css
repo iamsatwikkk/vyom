@@ -164,7 +164,8 @@ body { font-family: var(--font-sans); background: #0a0c1a; color: var(--white); 
   display:flex;align-items:center;
   background:rgba(0,0,0,.32);
   border:1px solid rgba(255,255,255,.35);
-  border-radius:4px;backdrop-filter:blur(24px);overflow:hidden;
+  border-radius:50px;          /* fully pill-shaped — classy curved edges */
+  backdrop-filter:blur(24px);overflow:hidden;
   transition:border-color .25s,box-shadow .25s;
   box-shadow:0 4px 32px rgba(0,0,0,.25);
 }
@@ -172,19 +173,26 @@ body { font-family: var(--font-sans); background: #0a0c1a; color: var(--white); 
   border-color:rgba(201,169,110,.75);
   box-shadow:0 0 0 3px rgba(201,169,110,.15),0 8px 40px rgba(0,0,0,.35);
 }
-.search-icon { flex-shrink:0;width:18px;height:18px;color:rgba(255,255,255,.7);margin:0 16px; }
+.search-icon { flex-shrink:0;width:18px;height:18px;color:rgba(255,255,255,.7);margin:0 18px; }
 .search-input {
   flex:1;background:none;border:none;outline:none;
-  font-family:var(--font-serif);font-size:17px;font-weight:300;
-  color:#ffffff;padding:17px 0;letter-spacing:.02em;
+  /* Use system UI so emojis render correctly */
+  font-family: var(--font-serif), 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', sans-serif;
+  font-size:17px;font-weight:300;
+  color:#ffffff;padding:16px 0;letter-spacing:.02em;
 }
 .search-input::placeholder { color:rgba(255,255,255,.55);font-style:italic; }
 .search-submit {
-  flex-shrink:0;width:52px;height:54px;background:var(--gold);
-  border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;
-  transition:background .2s;
+  flex-shrink:0;width:52px;height:52px;
+  background:var(--gold);
+  border:none;cursor:pointer;
+  border-radius:50%;            /* round gold button */
+  margin-right:4px;
+  display:flex;align-items:center;justify-content:center;
+  transition:background .2s,transform .15s;
+  box-shadow:0 2px 12px rgba(201,169,110,.3);
 }
-.search-submit:hover { background:var(--gold-light); }
+.search-submit:hover { background:var(--gold-light);transform:scale(1.05); }
 .search-submit svg { width:18px;height:18px;color:var(--text-dark); }
 
 /* ── FOOTER ── */
@@ -631,6 +639,20 @@ body { font-family: var(--font-sans); background: #0a0c1a; color: var(--white); 
   border:none;border-top:1px solid rgba(255,255,255,.08);margin:4px 0;
 }
 
+/* Theme row inside mobile drawer */
+.mobile-drawer-theme {
+  display:flex;align-items:center;justify-content:space-between;
+  padding:11px 22px;gap:12px;
+}
+.mobile-drawer-theme span {
+  font-family:var(--font-sans);font-size:14px;font-weight:300;
+  letter-spacing:.1em;text-transform:uppercase;
+  color:rgba(255,255,255,.75);
+}
+/* theme-toggle already styled globally, just needs size tweak in drawer */
+.mobile-nav-drawer .theme-toggle { flex-shrink:0; }
+.mobile-nav-drawer .theme-opt { padding:5px 11px;font-size:11px; }
+
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
    3-DOT DROPDOWN MENU
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
@@ -825,6 +847,21 @@ body { font-family: var(--font-sans); background: #0a0c1a; color: var(--white); 
 }
 .bm-status.success { color:#7ecba1; }
 .bm-status.error   { color:#e07070; }
+
+/* Clear history button */
+.bm-clear-btn {
+  background:rgba(255,80,80,.12);border:1px solid rgba(255,80,80,.25);
+  color:rgba(255,120,120,.85);font-family:var(--font-sans);font-size:11px;
+  font-weight:400;letter-spacing:.1em;text-transform:uppercase;
+  padding:5px 12px;border-radius:4px;cursor:pointer;transition:all .2s;
+}
+.bm-clear-btn:hover { background:rgba(255,80,80,.22);color:#ff9090; }
+
+/* History items reuse .bm-item styles */
+.history-time {
+  font-family:var(--font-sans);font-size:10px;color:rgba(255,255,255,.35);
+  margin-top:2px;letter-spacing:.04em;
+}
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
    LIGHT THEME
