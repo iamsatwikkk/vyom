@@ -4,7 +4,7 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>VYOM — FAQ</title>
-  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="/style.css"/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Outfit:wght@200;300;400;500&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 </head>
@@ -22,10 +22,10 @@
   <nav class="nav">
     <div class="nav-logo"><span class="logo-symbol">✦</span></div>
     <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="privacy.html">Privacy</a></li>
-      <li><a href="faq.html" class="nav-active">FAQ</a></li>
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/privacy.html">Privacy</a></li>
+      <li><a href="/faq.html" class="nav-active">FAQ</a></li>
     </ul>
     <button class="nav-cta" onclick="window.location='index.html'">Get VYOM+</button>
     <!-- Hamburger (mobile only) -->
@@ -36,10 +36,10 @@
 
   <!-- Mobile drawer -->
   <div class="mobile-nav-drawer" id="mobileDrawer">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="privacy.html">Privacy</a>
-    <a href="faq.html" class="nav-active">FAQ</a>
+    <a href="/index.html">Home</a>
+    <a href="/about.html">About</a>
+    <a href="/privacy.html">Privacy</a>
+    <a href="/faq.html" class="nav-active">FAQ</a>
   </div>
 
   <main class="inner-page">
@@ -97,7 +97,7 @@
       <div class="faq-item">
         <button class="faq-q">Who made VYOM?<span class="faq-arrow">↓</span></button>
         <div class="faq-a">
-          <p>VYOM was designed and built by <strong>Satwik</strong>. Visit the <a href="about.html" style="color:var(--gold-light);text-underline-offset:3px;">About page</a> to learn more about the project and the person behind it.</p>
+          <p>VYOM was designed and built by <strong>Satwik</strong>. Visit the <a href="/about.html" style="color:var(--gold-light);text-underline-offset:3px;">About page</a> to learn more about the project and the person behind it.</p>
         </div>
       </div>
 
@@ -140,12 +140,12 @@
 
   <!-- EmailJS SDK -->
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-  <script src="script.js"></script>
+  <script src="/script.js"></script>
   <script>
     /* ── EmailJS config — fill in your 3 values from emailjs.com ── */
-const EMAILJS_PUBLIC_KEY = 'P01101Uo5deW97-1k';
-const EMAILJS_SERVICE_ID = 'service_hd4jup7';
-const EMAILJS_TEMPLATE_ID = 'template_ohq89ab';
+    const EMAILJS_PUBLIC_KEY  = 'YOUR_PUBLIC_KEY';   // Account → Public Key
+    const EMAILJS_SERVICE_ID  = 'YOUR_SERVICE_ID';   // Email Services → Service ID
+    const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';  // Email Templates → Template ID
 
     emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
 
