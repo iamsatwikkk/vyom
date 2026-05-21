@@ -72,7 +72,7 @@
   /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
      NEW TAB
   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-  function openNewTab() { window.open('index.html','_blank'); closeDotMenu(); }
+  function openNewTab() { window.open('/index.html','_blank'); closeDotMenu(); }
   const menuNewTab   = document.getElementById('menuNewTab');
   const mobileNewTab = document.getElementById('mobileNewTab');
   if (menuNewTab)   menuNewTab.addEventListener('click', openNewTab);
