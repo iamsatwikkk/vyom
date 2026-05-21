@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
@@ -26,6 +26,14 @@
     </div>
   </div>
 
+  <!-- ── INCOGNITO BANNER ── -->
+  <div class="incognito-banner" id="incognitoBanner">
+    <svg viewBox="0 0 24 24" fill="none" width="16" height="16">
+      <path d="M17 11V7A5 5 0 0 0 7 7v4M5 11h14a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+    </svg>
+    Incognito Mode — searches won't be saved
+    <button id="exitIncognito">Exit</button>
+  </div>
 
   <!-- ── SEARCH RESULTS IFRAME (Bing) ── -->
   <div class="search-results-wrap" id="searchResultsWrap">
@@ -67,12 +75,50 @@
       <li><a href="privacy.html">Privacy</a></li>
       <li><a href="faq.html">FAQ</a></li>
     </ul>
-    <button class="nav-cta" id="getVyomPlusBtn">Get VYOM+</button>
+    <div class="nav-right">
+      <button class="nav-cta" id="getVyomPlusBtn">Get VYOM+</button>
+      <!-- 3-dot menu button -->
+      <button class="three-dot-btn" id="threeDotBtn" aria-label="More options">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
     <!-- Hamburger (mobile only) -->
     <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
   </nav>
+
+  <!-- ── 3-DOT DROPDOWN MENU ── -->
+  <div class="dot-menu" id="dotMenu">
+    <button class="dot-menu-item" id="menuNewTab">
+      <svg viewBox="0 0 24 24" fill="none" width="15" height="15"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M3 9h18" stroke="currentColor" stroke-width="1.5"/><path d="M9 21V9" stroke="currentColor" stroke-width="1.5"/></svg>
+      New Tab
+    </button>
+    <button class="dot-menu-item" id="menuIncognito">
+      <svg viewBox="0 0 24 24" fill="none" width="15" height="15"><path d="M17 11V7A5 5 0 0 0 7 7v4M5 11h14a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      Incognito Tab
+    </button>
+    <div class="dot-menu-divider"></div>
+    <div class="dot-menu-theme">
+      <span class="dot-menu-label">
+        <svg viewBox="0 0 24 24" fill="none" width="15" height="15"><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.5"/><path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        Theme
+      </span>
+      <div class="theme-toggle" id="themeToggle">
+        <button class="theme-opt active" data-theme="dark">Dark</button>
+        <button class="theme-opt" data-theme="light">Light</button>
+      </div>
+    </div>
+    <div class="dot-menu-divider"></div>
+    <button class="dot-menu-item" id="menuBookmarks">
+      <svg viewBox="0 0 24 24" fill="none" width="15" height="15"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      View Bookmarks
+    </button>
+    <button class="dot-menu-item" id="menuAddBookmark">
+      <svg viewBox="0 0 24 24" fill="none" width="15" height="15"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 8v6M9 11h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      Add Bookmark
+    </button>
+  </div>
 
   <!-- Mobile drawer -->
   <div class="mobile-nav-drawer" id="mobileDrawer">
@@ -82,6 +128,10 @@
     <a href="faq.html">FAQ</a>
     <hr/>
     <a href="#" id="mobileVyomPlusBtn" style="color:var(--gold);">Get VYOM+ ✦</a>
+    <hr/>
+    <a href="#" id="mobileNewTab">New Tab</a>
+    <a href="#" id="mobileIncognito">Incognito Tab</a>
+    <a href="#" id="mobileBookmarks">View Bookmarks</a>
   </div>
 
   <!-- ── HERO ── -->
@@ -153,6 +203,38 @@
           <span>Powered by <strong>OpenAI GPT</strong> — a third-party service. Not developed or owned by VYOM or Satwik.</span>
         </div>
         <button class="plus-cta" id="closePlusBtn">Coming Soon ✦</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── BOOKMARKS PANEL ── -->
+  <div class="bm-overlay" id="bmOverlay">
+    <div class="bm-panel">
+      <div class="bm-header">
+        <h3 class="bm-title">Bookmarks</h3>
+        <button class="bm-close" id="bmClose">✕</button>
+      </div>
+      <div class="bm-list" id="bmList">
+        <!-- filled by JS -->
+      </div>
+      <p class="bm-empty" id="bmEmpty">No bookmarks yet. Add one from the ⋯ menu.</p>
+    </div>
+  </div>
+
+  <!-- ── ADD BOOKMARK PANEL ── -->
+  <div class="bm-overlay" id="addBmOverlay">
+    <div class="bm-panel">
+      <div class="bm-header">
+        <h3 class="bm-title">Add Bookmark</h3>
+        <button class="bm-close" id="addBmClose">✕</button>
+      </div>
+      <div class="bm-form">
+        <label>Title</label>
+        <input type="text" id="bmTitle" placeholder="e.g. My Favourite Site"/>
+        <label>URL</label>
+        <input type="url" id="bmUrl" placeholder="https://example.com"/>
+        <button class="bm-save-btn" id="bmSave">Save Bookmark</button>
+        <p class="bm-status" id="bmStatus"></p>
       </div>
     </div>
   </div>
