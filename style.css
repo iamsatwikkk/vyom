@@ -164,7 +164,7 @@ body { font-family: var(--font-sans); background: #0a0c1a; color: var(--white); 
   display:flex;align-items:center;
   background:rgba(0,0,0,.32);
   border:1px solid rgba(255,255,255,.35);
-  border-radius:50px;          /* fully pill-shaped — classy curved edges */
+  border-radius:8px;
   backdrop-filter:blur(24px);overflow:hidden;
   transition:border-color .25s,box-shadow .25s;
   box-shadow:0 4px 32px rgba(0,0,0,.25);
@@ -173,26 +173,23 @@ body { font-family: var(--font-sans); background: #0a0c1a; color: var(--white); 
   border-color:rgba(201,169,110,.75);
   box-shadow:0 0 0 3px rgba(201,169,110,.15),0 8px 40px rgba(0,0,0,.35);
 }
-.search-icon { flex-shrink:0;width:18px;height:18px;color:rgba(255,255,255,.7);margin:0 18px; }
+.search-icon { flex-shrink:0;width:18px;height:18px;color:rgba(255,255,255,.7);margin:0 16px; }
 .search-input {
   flex:1;background:none;border:none;outline:none;
-  /* Use system UI so emojis render correctly */
   font-family: var(--font-serif), 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', sans-serif;
   font-size:17px;font-weight:300;
-  color:#ffffff;padding:16px 0;letter-spacing:.02em;
+  color:#ffffff;padding:17px 0;letter-spacing:.02em;
 }
 .search-input::placeholder { color:rgba(255,255,255,.55);font-style:italic; }
 .search-submit {
-  flex-shrink:0;width:52px;height:52px;
+  flex-shrink:0;width:52px;height:54px;
   background:var(--gold);
-  border:none;cursor:pointer;
-  border-radius:50%;            /* round gold button */
-  margin-right:4px;
+  border:none;cursor:pointer;border-radius:0;
+  margin-right:0;
   display:flex;align-items:center;justify-content:center;
-  transition:background .2s,transform .15s;
-  box-shadow:0 2px 12px rgba(201,169,110,.3);
+  transition:background .2s;
 }
-.search-submit:hover { background:var(--gold-light);transform:scale(1.05); }
+.search-submit:hover { background:var(--gold-light); }
 .search-submit svg { width:18px;height:18px;color:var(--text-dark); }
 
 /* ── FOOTER ── */
@@ -209,7 +206,7 @@ body { font-family: var(--font-sans); background: #0a0c1a; color: var(--white); 
 /* Prussian blue for Satwik name */
 .footer-credit strong {
   font-weight:600;
-  color:var(--prussian-light);
+  color:var(--white-fade);
   font-family:var(--font-display);font-style:italic;font-size:15px;
   text-shadow:0 0 18px rgba(26,79,120,.7),0 1px 6px rgba(0,0,0,.4);
 }
@@ -957,19 +954,7 @@ body { font-family: var(--font-sans); background: #0a0c1a; color: var(--white); 
   .hero { padding: 110px 20px 60px; }
   .engine-tabs { gap:4px; }
   .engine-tab  { padding:6px 12px; font-size:11.5px; }
-
-  /* Fix pill search bar on mobile */
   .search-form { max-width:100%; }
-  .search-box  { border-radius:50px; }          /* keep pill */
-  .search-submit {
-    width:44px; height:44px;
-    margin-right:5px;
-    border-radius:50%;
-    flex-shrink:0;
-  }
-  .search-input { padding:14px 0; font-size:16px; }
-  .search-icon  { margin:0 14px; }
-
   .plus-content { padding:44px 28px 36px; }
   .inner-page { padding:120px 20px 50px; }
   .creator-card { flex-direction:column;align-items:flex-start;padding:28px 24px;gap:24px; }
