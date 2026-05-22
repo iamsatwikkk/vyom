@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
   <title>VYOM — FAQ</title>
-  <link rel="stylesheet" href="/style.css"/>
+  <link rel="stylesheet" href="style.css"/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Outfit:wght@200;300;400;500&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 </head>
@@ -22,24 +22,26 @@
   <nav class="nav">
     <div class="nav-logo"><span class="logo-symbol">✦</span></div>
     <ul class="nav-links">
-      <li><a href="/index.html">Home</a></li>
-      <li><a href="/about.html">About</a></li>
-      <li><a href="/privacy.html">Privacy</a></li>
-      <li><a href="/faq.html" class="nav-active">FAQ</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
+      <li><a href="faq.html" class="nav-active">FAQ</a></li>
     </ul>
-    <button class="nav-cta" onclick="window.location='index.html'">Get VYOM+</button>
-    <!-- Hamburger (mobile only) -->
+    <div class="nav-right">
+      <button class="nav-cta" onclick="window.location='index.html'">Get VYOM+</button>
+    </div>
     <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
   </nav>
 
-  <!-- Mobile drawer -->
   <div class="mobile-nav-drawer" id="mobileDrawer">
-    <a href="/index.html">Home</a>
-    <a href="/about.html">About</a>
-    <a href="/privacy.html">Privacy</a>
-    <a href="/faq.html" class="nav-active">FAQ</a>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="faq.html" class="nav-active">FAQ</a>
+    <hr/>
+    <a href="index.html" style="color:var(--gold);">Get VYOM+ ✦</a>
   </div>
 
   <main class="inner-page">
@@ -54,56 +56,41 @@
 
       <div class="faq-item">
         <button class="faq-q">What is VYOM?<span class="faq-arrow">↓</span></button>
-        <div class="faq-a">
-          <p>VYOM is a browser homepage that lets you switch between multiple search engines — Google, Bing, DuckDuckGo, Brave, Yahoo and Ecosia — from a single, beautiful interface. The name comes from the Sanskrit word for <em>sky</em>.</p>
-        </div>
+        <div class="faq-a"><p>VYOM is a browser homepage that lets you switch between multiple search engines — Google, Bing, DuckDuckGo, Brave, Yahoo and Ecosia — from a single, beautiful interface. The name comes from the Sanskrit word for <em>sky</em>.</p></div>
       </div>
 
       <div class="faq-item">
         <button class="faq-q">How do I switch search engines?<span class="faq-arrow">↓</span></button>
-        <div class="faq-a">
-          <p>Click any engine tab above the search bar. Your selection is applied immediately. You can also press <kbd>/</kbd> anywhere on the homepage to jump straight to the search field.</p>
-        </div>
+        <div class="faq-a"><p>Click any engine tab above the search bar. Your selection is applied immediately. You can also press <kbd>/</kbd> anywhere on the homepage to jump straight to the search field.</p></div>
       </div>
 
       <div class="faq-item">
         <button class="faq-q">What is VYOM+?<span class="faq-arrow">↓</span></button>
-        <div class="faq-a">
-          <p>VYOM+ is an upcoming AI-powered assistant built into the browser. It is <strong>powered by OpenAI GPT</strong> — a third-party service — and is not developed or owned by VYOM or Satwik. VYOM+ is currently in development; stay tuned.</p>
-        </div>
+        <div class="faq-a"><p>VYOM+ is an upcoming AI-powered assistant built into the browser. It is <strong>powered by OpenAI GPT</strong> — a third-party service — and is not developed or owned by VYOM or Satwik. VYOM+ is currently in development; stay tuned.</p></div>
       </div>
 
       <div class="faq-item">
         <button class="faq-q">Does VYOM track my searches?<span class="faq-arrow">↓</span></button>
-        <div class="faq-a">
-          <p>No. VYOM does not store, log, or transmit your search queries. Your searches go directly to the engine you select. For maximum privacy, choose DuckDuckGo or Brave — neither builds a search profile on you.</p>
-        </div>
+        <div class="faq-a"><p>No. VYOM does not store, log, or transmit your search queries to any server. Your searches go directly to the engine you select. VYOM does save a local history on <em>your device</em> via localStorage — this never leaves your browser and can be cleared anytime from the History panel.</p></div>
       </div>
 
       <div class="faq-item">
         <button class="faq-q">Does VYOM use cookies?<span class="faq-arrow">↓</span></button>
-        <div class="faq-a">
-          <p>VYOM does not set any tracking cookies. Minor session memory may be used to remember your last selected engine — this never leaves your device and is cleared when your session ends.</p>
-        </div>
+        <div class="faq-a"><p>VYOM does not set any tracking cookies. It uses <code>localStorage</code> only to remember your theme, bookmarks, and search history — all stored locally on your device.</p></div>
       </div>
 
       <div class="faq-item">
         <button class="faq-q">Is VYOM free to use?<span class="faq-arrow">↓</span></button>
-        <div class="faq-a">
-          <p>Yes — the core VYOM experience is completely free, with no ads and no hidden costs. VYOM+ (the AI assistant) will be a premium add-on once it launches.</p>
-        </div>
+        <div class="faq-a"><p>Yes — the core VYOM experience is completely free, with no ads and no hidden costs. VYOM+ (the AI assistant) will be a premium add-on once it launches.</p></div>
       </div>
 
       <div class="faq-item">
         <button class="faq-q">Who made VYOM?<span class="faq-arrow">↓</span></button>
-        <div class="faq-a">
-          <p>VYOM was designed and built by <strong>Satwik</strong>. Visit the <a href="/about.html" style="color:var(--gold-light);text-underline-offset:3px;">About page</a> to learn more about the project and the person behind it.</p>
-        </div>
+        <div class="faq-a"><p>VYOM was designed and built by <strong>Satwik</strong>. Visit the <a href="about.html" style="color:var(--gold-light);text-underline-offset:3px;">About page</a> to learn more about the project and the person behind it.</p></div>
       </div>
 
     </section>
 
-    <!-- Contact form -->
     <section class="contact-section">
       <div class="contact-inner">
         <p class="hero-eyebrow" style="margin-bottom:14px">SEND A QUERY</p>
@@ -140,16 +127,21 @@
 
   <!-- EmailJS SDK -->
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-  <script src="/script.js"></script>
+  <script src="script.js"></script>
   <script>
-    /* ── EmailJS config — fill in your 3 values from emailjs.com ── */
-    const EMAILJS_PUBLIC_KEY  = 'YOUR_PUBLIC_KEY';   // Account → Public Key
-    const EMAILJS_SERVICE_ID  = 'YOUR_SERVICE_ID';   // Email Services → Service ID
-    const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';  // Email Templates → Template ID
+    // Apply saved theme
+    const t = localStorage.getItem('vyom_theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', t);
 
-    emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+    // Hamburger
+    const hb = document.getElementById('hamburgerBtn');
+    const dr = document.getElementById('mobileDrawer');
+    if (hb && dr) {
+      hb.addEventListener('click', e => { e.stopPropagation(); dr.classList.toggle('open'); hb.classList.toggle('open'); });
+      document.addEventListener('click', e => { if (!dr.contains(e.target) && e.target !== hb) { dr.classList.remove('open'); hb.classList.remove('open'); } });
+    }
 
-    /* ── FAQ accordion ── */
+    // FAQ accordion
     document.querySelectorAll('.faq-q').forEach(btn => {
       btn.addEventListener('click', () => {
         const item = btn.closest('.faq-item');
@@ -159,45 +151,30 @@
       });
     });
 
-    /* ── Contact form — sends directly via EmailJS ── */
+    // EmailJS config — fill in your values
+    const EMAILJS_PUBLIC_KEY  = 'YOUR_PUBLIC_KEY';
+    const EMAILJS_SERVICE_ID  = 'YOUR_SERVICE_ID';
+    const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';
+    emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+
     document.getElementById('contactForm').addEventListener('submit', async e => {
       e.preventDefault();
       const email   = document.getElementById('cfEmail').value.trim();
       const message = document.getElementById('cfMessage').value.trim();
       const status  = document.getElementById('cfStatus');
       const btn     = document.getElementById('cfSubmitBtn');
-
-      if (!email || !message) {
-        status.textContent = 'Please fill in both fields.';
-        status.className = 'cf-status error';
-        return;
-      }
-
-      // Basic email format check
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-        status.textContent = 'Please enter a valid email address.';
-        status.className = 'cf-status error';
-        return;
-      }
-
-      btn.disabled = true;
-      btn.textContent = 'Sending…';
-      status.textContent = '';
-      status.className = 'cf-status';
-
+      if (!email || !message) { status.textContent = 'Please fill in both fields.'; status.className = 'cf-status error'; return; }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { status.textContent = 'Please enter a valid email address.'; status.className = 'cf-status error'; return; }
+      btn.disabled = true; btn.textContent = 'Sending…'; status.textContent = ''; status.className = 'cf-status';
       try {
         await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
-          from_email: email,          // matches {{from_email}} in your template
-          message:    message,        // matches {{message}} in your template
-          to_email:   'ssom.udp2005@gmail.com',
-          reply_to:   email,
+          from_email: email, message: message,
+          to_email: 'ssom.udp2005@gmail.com', reply_to: email,
         });
-
         status.textContent = '✦ Message sent! Satwik will get back to you soon.';
         status.className = 'cf-status success';
         document.getElementById('contactForm').reset();
       } catch (err) {
-        console.error('EmailJS error:', err);
         status.textContent = 'Something went wrong. Please try again or email ssom.udp2005@gmail.com directly.';
         status.className = 'cf-status error';
       } finally {
