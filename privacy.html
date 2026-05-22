@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
   <title>VYOM — Privacy</title>
-  <link rel="stylesheet" href="/style.css"/>
+  <link rel="stylesheet" href="style.css"/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Outfit:wght@200;300;400;500&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 </head>
@@ -22,24 +22,26 @@
   <nav class="nav">
     <div class="nav-logo"><span class="logo-symbol">✦</span></div>
     <ul class="nav-links">
-      <li><a href="/index.html">Home</a></li>
-      <li><a href="/about.html">About</a></li>
-      <li><a href="/privacy.html" class="nav-active">Privacy</a></li>
-      <li><a href="/faq.html">FAQ</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="privacy.html" class="nav-active">Privacy</a></li>
+      <li><a href="faq.html">FAQ</a></li>
     </ul>
-    <button class="nav-cta" onclick="window.location='index.html'">Get VYOM+</button>
-    <!-- Hamburger (mobile only) -->
+    <div class="nav-right">
+      <button class="nav-cta" onclick="window.location='index.html'">Get VYOM+</button>
+    </div>
     <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
   </nav>
 
-  <!-- Mobile drawer -->
   <div class="mobile-nav-drawer" id="mobileDrawer">
-    <a href="/index.html">Home</a>
-    <a href="/about.html">About</a>
-    <a href="/privacy.html" class="nav-active">Privacy</a>
-    <a href="/faq.html">FAQ</a>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="privacy.html" class="nav-active">Privacy</a>
+    <a href="faq.html">FAQ</a>
+    <hr/>
+    <a href="index.html" style="color:var(--gold);">Get VYOM+ ✦</a>
   </div>
 
   <main class="inner-page">
@@ -50,7 +52,6 @@
       <p class="hero-sub">Simple, honest, and written in plain language.</p>
     </div>
 
-    <!-- Intro -->
     <div class="prose-section">
       <h2>Our commitment <span class="gold-dot">✦</span></h2>
       <p>
@@ -64,7 +65,6 @@
 
     <hr class="prose-divider"/>
 
-    <!-- Search queries -->
     <div class="prose-section">
       <h2>Search queries <span class="gold-dot">✦</span></h2>
       <p>
@@ -77,24 +77,22 @@
 
     <hr class="prose-divider"/>
 
-    <!-- Cookies & local storage -->
     <div class="prose-section">
       <h2>Cookies &amp; local storage <span class="gold-dot">✦</span></h2>
       <p>
-        VYOM does <strong>not</strong> set any tracking cookies. The only browser storage VYOM may use is lightweight session memory to remember which search engine tab you last selected — this data never leaves your device and is cleared when your browser session ends. No cookie banners, no consent walls, because there is nothing to consent to.
+        VYOM does <strong>not</strong> set any tracking cookies. The browser's <code>localStorage</code> is used only to remember your theme preference, bookmarks, and search history — all of this data lives entirely on your own device and is never sent anywhere. You can clear it at any time from the History panel or your browser settings.
       </p>
     </div>
 
     <hr class="prose-divider"/>
 
-    <!-- Third-party services -->
     <div class="prose-section">
       <h2>Third-party services <span class="gold-dot">✦</span></h2>
       <p>
         VYOM loads Google Fonts (for typography) from Google's CDN. This means Google's servers receive a standard request for the font file, which may include your IP address and browser information — as is the case with any website that loads a resource from a third-party host. VYOM does not control what Google logs from that request.
       </p>
       <p>
-        Favicon images for search engines (the small icons next to each engine tab) are fetched from those engines' own domains. This is a lightweight, standard request and does not transmit any query or personal data.
+        Favicon images for search engines are fetched from those engines' own domains. This is a lightweight, standard request and does not transmit any query or personal data.
       </p>
       <div class="info-card">
         <svg viewBox="0 0 24 24" fill="none" width="15" height="15"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M12 8v4M12 16h.01" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
@@ -104,38 +102,33 @@
 
     <hr class="prose-divider"/>
 
-    <!-- FAQ contact form -->
     <div class="prose-section">
       <h2>Contact &amp; queries <span class="gold-dot">✦</span></h2>
       <p>
-        When you use the FAQ contact form, your email address and message are passed to your <em>local mail client</em> via a standard <code>mailto:</code> link. VYOM does not transmit this data through any server — the data goes wherever your mail client sends it. The recipient is the creator, Satwik, at a personal email address used solely to respond to genuine enquiries.
+        When you use the FAQ contact form, your email address and message are passed to your <em>local mail client</em> via EmailJS directly to the creator's inbox. VYOM does not store this data beyond what EmailJS processes to deliver the message.
       </p>
     </div>
 
     <hr class="prose-divider"/>
 
-    <!-- User rights -->
     <div class="prose-section">
       <h2>Your rights <span class="gold-dot">✦</span></h2>
       <p>
-        Because VYOM does not collect personal data, there is nothing to request, correct, export, or delete from any VYOM database — such a database does not exist. If you have privacy concerns about a specific search engine's data practices, contact that engine directly; their privacy teams can fulfil data subject requests under GDPR, CCPA, and equivalent legislation.
+        Because VYOM does not collect personal data on any server, there is nothing to request, correct, export, or delete from any VYOM database — such a database does not exist. If you have privacy concerns about a specific search engine's data practices, contact that engine directly.
       </p>
       <p>
-        If you believe something on this page is inaccurate or have a specific privacy question, please reach out via the <a href="/faq.html" style="color:var(--gold-light);text-underline-offset:3px;">FAQ page</a>.
+        If you believe something on this page is inaccurate or have a specific privacy question, please reach out via the <a href="faq.html" style="color:var(--gold-light);text-underline-offset:3px;">FAQ page</a>.
       </p>
     </div>
 
     <hr class="prose-divider"/>
 
-    <!-- Updates -->
     <div class="prose-section">
       <h2>Changes to this policy <span class="gold-dot">✦</span></h2>
       <p>
-        This policy reflects VYOM as it exists today. If the project evolves — particularly around VYOM+ — this page will be updated and the effective date will be noted at the top. VYOM will never introduce data collection silently; any meaningful change will be communicated clearly.
+        This policy reflects VYOM as it exists today. If the project evolves — particularly around VYOM+ — this page will be updated. VYOM will never introduce data collection silently; any meaningful change will be communicated clearly.
       </p>
-      <p style="color:rgba(255,255,255,.35);font-size:14px;margin-top:8px;">
-        Last updated: May 2026
-      </p>
+      <p style="color:rgba(255,255,255,.35);font-size:14px;margin-top:8px;">Last updated: May 2026</p>
     </div>
 
   </main>
@@ -146,6 +139,16 @@
     <span class="footer-copy">© 2026 VYOM</span>
   </footer>
 
-  <script src="/script.js"></script>
+  <script src="script.js"></script>
+  <script>
+    const t = localStorage.getItem('vyom_theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', t);
+    const hb = document.getElementById('hamburgerBtn');
+    const dr = document.getElementById('mobileDrawer');
+    if (hb && dr) {
+      hb.addEventListener('click', e => { e.stopPropagation(); dr.classList.toggle('open'); hb.classList.toggle('open'); });
+      document.addEventListener('click', e => { if (!dr.contains(e.target) && e.target !== hb) { dr.classList.remove('open'); hb.classList.remove('open'); } });
+    }
+  </script>
 </body>
 </html>
