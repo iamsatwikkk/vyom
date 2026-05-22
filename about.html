@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
   <title>VYOM — About</title>
-  <link rel="stylesheet" href="/style.css"/>
+  <link rel="stylesheet" href="style.css"/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Outfit:wght@200;300;400;500&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 </head>
@@ -22,24 +22,26 @@
   <nav class="nav">
     <div class="nav-logo"><span class="logo-symbol">✦</span></div>
     <ul class="nav-links">
-      <li><a href="/index.html">Home</a></li>
-      <li><a href="/about.html" class="nav-active">About</a></li>
-      <li><a href="/privacy.html">Privacy</a></li>
-      <li><a href="/faq.html">FAQ</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html" class="nav-active">About</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
+      <li><a href="faq.html">FAQ</a></li>
     </ul>
-    <button class="nav-cta" onclick="window.location='index.html'">Get VYOM+</button>
-    <!-- Hamburger (mobile only) -->
+    <div class="nav-right">
+      <button class="nav-cta" onclick="window.location='index.html'">Get VYOM+</button>
+    </div>
     <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
   </nav>
 
-  <!-- Mobile drawer -->
   <div class="mobile-nav-drawer" id="mobileDrawer">
-    <a href="/index.html">Home</a>
-    <a href="/about.html" class="nav-active">About</a>
-    <a href="/privacy.html">Privacy</a>
-    <a href="/faq.html">FAQ</a>
+    <a href="index.html">Home</a>
+    <a href="about.html" class="nav-active">About</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="faq.html">FAQ</a>
+    <hr/>
+    <a href="index.html" style="color:var(--gold);">Get VYOM+ ✦</a>
   </div>
 
   <main class="inner-page">
@@ -50,7 +52,6 @@
       <p class="hero-sub">Where the sky meets the search.</p>
     </div>
 
-    <!-- What is VYOM -->
     <div class="prose-section">
       <h2>What is VYOM <span class="gold-dot">✦</span></h2>
       <p>
@@ -63,7 +64,6 @@
 
     <hr class="prose-divider"/>
 
-    <!-- Why it exists -->
     <div class="prose-section">
       <h2>Why it exists <span class="gold-dot">✦</span></h2>
       <p>
@@ -80,7 +80,6 @@
 
     <hr class="prose-divider"/>
 
-    <!-- VYOM+ -->
     <div class="prose-section">
       <h2>VYOM+ <span class="gold-dot">✦</span></h2>
       <p>
@@ -90,7 +89,6 @@
 
     <hr class="prose-divider"/>
 
-    <!-- About the creator -->
     <div class="prose-section">
       <h2>The Creator <span class="gold-dot">✦</span></h2>
       <p>
@@ -98,11 +96,9 @@
       </p>
 
       <div class="creator-card">
-        <!-- Place pfp.png in the same folder as this file. If absent, the monogram shows. -->
         <img src="pfp.png" alt="Satwik" class="creator-pfp"
           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
         <div class="creator-pfp-placeholder" style="display:none">S</div>
-
         <div class="creator-info">
           <h3>Satwik</h3>
           <p class="creator-role">Designer &amp; Developer · VYOM</p>
@@ -121,6 +117,18 @@
     <span class="footer-copy">© 2026 VYOM</span>
   </footer>
 
-  <script src="/script.js"></script>
+  <script src="script.js"></script>
+  <script>
+    // Apply saved theme on inner pages
+    const t = localStorage.getItem('vyom_theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', t);
+    // Hamburger
+    const hb = document.getElementById('hamburgerBtn');
+    const dr = document.getElementById('mobileDrawer');
+    if (hb && dr) {
+      hb.addEventListener('click', e => { e.stopPropagation(); dr.classList.toggle('open'); hb.classList.toggle('open'); });
+      document.addEventListener('click', e => { if (!dr.contains(e.target) && e.target !== hb) { dr.classList.remove('open'); hb.classList.remove('open'); } });
+    }
+  </script>
 </body>
 </html>
