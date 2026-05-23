@@ -29,10 +29,10 @@
     </ul>
     <div class="nav-right">
       <button class="nav-cta" onclick="window.location='index.html'">Get VYOM+</button>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-    <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
   </nav>
 
   <div class="mobile-nav-drawer" id="mobileDrawer">
@@ -127,8 +127,9 @@
 
   <!-- EmailJS SDK -->
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-  <script src="script.js"></script>
   <script>
+    // Auth guard
+    if (!localStorage.getItem('vyom_user')) window.location.replace('login.html');
     // Apply saved theme
     const t = localStorage.getItem('vyom_theme') || 'dark';
     document.documentElement.setAttribute('data-theme', t);
