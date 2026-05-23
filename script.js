@@ -2,6 +2,59 @@
 (function () {
 
   /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     AUTH GUARD — redirect to login if not signed in
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+  const currentUser = localStorage.getItem('vyom_user');
+  if (!currentUser) {
+    window.location.replace('login.html');
+    return; // stop executing rest of script
+  }
+
+  /* Show username chip in nav */
+  const userChip    = document.getElementById('userChip');
+  const userAvatar  = document.getElementById('userAvatar');
+  const userNameEl  = document.getElementById('userName');
+  const userDropdown = document.getElementById('userDropdown');
+  const logoutBtn   = document.getElementById('logoutBtn');
+
+  if (userChip) {
+    userChip.style.display = 'flex';
+    userAvatar.textContent = currentUser.charAt(0).toUpperCase();
+    userNameEl.textContent = currentUser;
+
+    // Toggle dropdown
+    userChip.addEventListener('click', e => {
+      e.stopPropagation();
+      userChip.classList.toggle('open');
+    });
+    document.addEventListener('click', () => userChip.classList.remove('open'));
+  }
+
+  /* Mobile drawer user row */
+  const mobileUserRow    = document.getElementById('mobileUserRow');
+  const mobileUserAvatar = document.getElementById('mobileUserAvatar');
+  const mobileUserName   = document.getElementById('mobileUserName');
+  const mobileUserHr     = document.getElementById('mobileUserHr');
+  const mobileLogoutHr   = document.getElementById('mobileLogoutHr');
+  const mobileLogoutBtn  = document.getElementById('mobileLogoutBtn');
+
+  if (mobileUserRow) {
+    mobileUserRow.style.display = 'flex';
+    mobileUserAvatar.textContent = currentUser.charAt(0).toUpperCase();
+    mobileUserName.textContent   = currentUser;
+    if (mobileUserHr)   mobileUserHr.style.display   = 'block';
+    if (mobileLogoutHr) mobileLogoutHr.style.display  = 'block';
+    if (mobileLogoutBtn) mobileLogoutBtn.style.display = 'block';
+  }
+
+  function doLogout() {
+    localStorage.removeItem('vyom_user');
+    window.location.replace('login.html');
+  }
+  if (logoutBtn)      logoutBtn.addEventListener('click', doLogout);
+  if (mobileLogoutBtn) mobileLogoutBtn.addEventListener('click', e => { e.preventDefault(); doLogout(); });
+
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
      THEME
   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
   const html = document.documentElement;
@@ -72,7 +125,7 @@
   /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
      NEW TAB
   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-  function openNewTab() { window.open('/index.html','_blank'); closeDotMenu(); }
+  function openNewTab() { window.open('index.html','_blank'); closeDotMenu(); }
   const menuNewTab   = document.getElementById('menuNewTab');
   const mobileNewTab = document.getElementById('mobileNewTab');
   if (menuNewTab)   menuNewTab.addEventListener('click', openNewTab);
