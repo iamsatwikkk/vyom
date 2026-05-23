@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <title>VYOM — Sign In</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Outfit:wght@200;300;400;500&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Sky background -->
+  <div class="sky">
+    <div class="sky-gradient"></div>
+    <div class="cloud cloud-1"></div>
+    <div class="cloud cloud-2"></div>
+    <div class="cloud cloud-3"></div>
+    <div class="cloud cloud-4"></div>
+    <div class="stars"></div>
+  </div>
+
+  <!-- Scrim -->
+  <div class="login-scrim"></div>
+
+  <main class="login-page">
+
+    <!-- Logo -->
+    <div class="login-logo">
+      <span class="logo-symbol" style="font-size:28px;">✦</span>
+      <span class="login-logo-text">VYOM</span>
+    </div>
+
+    <!-- Card -->
+    <div class="login-card" id="loginCard">
+
+      <!-- ── SIGN IN FORM ── -->
+      <div class="login-form-wrap" id="signinWrap">
+        <p class="login-eyebrow">WELCOME BACK</p>
+        <h2 class="login-title">Sign <em>In</em></h2>
+        <p class="login-sub">Enter your credentials to access VYOM.</p>
+
+        <form id="signinForm" class="login-form" novalidate>
+          <div class="login-field">
+            <label for="siUsername">Username</label>
+            <input type="text" id="siUsername" placeholder="your username" autocomplete="username" required/>
+          </div>
+          <div class="login-field">
+            <label for="siPassword">Password</label>
+            <div class="pw-wrap">
+              <input type="password" id="siPassword" placeholder="••••••••" autocomplete="current-password" required/>
+              <button type="button" class="pw-toggle" data-target="siPassword">
+                <svg class="eye-show" viewBox="0 0 24 24" fill="none" width="16" height="16"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.5"/></svg>
+                <svg class="eye-hide" viewBox="0 0 24 24" fill="none" width="16" height="16" style="display:none"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="1" y1="1" x2="23" y2="23" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </button>
+            </div>
+          </div>
+          <p class="login-error" id="siError"></p>
+          <button type="submit" class="login-btn">Sign In ✦</button>
+        </form>
+
+        <p class="login-switch">
+          Don't have an account?
+          <button type="button" class="login-switch-btn" id="goRegister">Register</button>
+        </p>
+      </div>
+
+      <!-- ── REGISTER FORM ── -->
+      <div class="login-form-wrap" id="registerWrap" style="display:none">
+        <p class="login-eyebrow">CREATE ACCOUNT</p>
+        <h2 class="login-title">Join <em>VYOM</em></h2>
+        <p class="login-sub">Create your free account to get started.</p>
+
+        <form id="registerForm" class="login-form" novalidate>
+          <div class="login-field">
+            <label for="regUsername">Username</label>
+            <input type="text" id="regUsername" placeholder="choose a username" autocomplete="username" required/>
+          </div>
+          <div class="login-field">
+            <label for="regPassword">Password</label>
+            <div class="pw-wrap">
+              <input type="password" id="regPassword" placeholder="min 6 characters" autocomplete="new-password" required/>
+              <button type="button" class="pw-toggle" data-target="regPassword">
+                <svg class="eye-show" viewBox="0 0 24 24" fill="none" width="16" height="16"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.5"/></svg>
+                <svg class="eye-hide" viewBox="0 0 24 24" fill="none" width="16" height="16" style="display:none"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="1" y1="1" x2="23" y2="23" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </button>
+            </div>
+          </div>
+          <div class="login-field">
+            <label for="regConfirm">Confirm Password</label>
+            <div class="pw-wrap">
+              <input type="password" id="regConfirm" placeholder="repeat password" autocomplete="new-password" required/>
+              <button type="button" class="pw-toggle" data-target="regConfirm">
+                <svg class="eye-show" viewBox="0 0 24 24" fill="none" width="16" height="16"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.5"/></svg>
+                <svg class="eye-hide" viewBox="0 0 24 24" fill="none" width="16" height="16" style="display:none"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="1" y1="1" x2="23" y2="23" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </button>
+            </div>
+          </div>
+          <p class="login-error" id="regError"></p>
+          <button type="submit" class="login-btn">Create Account ✦</button>
+        </form>
+
+        <p class="login-switch">
+          Already have an account?
+          <button type="button" class="login-switch-btn" id="goSignin">Sign In</button>
+        </p>
+      </div>
+
+    </div><!-- /login-card -->
+
+    <p class="login-footer-note">© 2026 VYOM · Crafted by <strong>Satwik</strong></p>
+
+  </main>
+
+  <script>
+    /* ── Apply saved theme ── */
+    document.documentElement.setAttribute('data-theme', localStorage.getItem('vyom_theme') || 'dark');
+
+    /* ── Redirect if already logged in ── */
+    if (localStorage.getItem('vyom_user')) {
+      window.location.replace('index.html');
+    }
+
+    /* ── Toggle sign in / register ── */
+    document.getElementById('goRegister').addEventListener('click', () => {
+      document.getElementById('signinWrap').style.display = 'none';
+      document.getElementById('registerWrap').style.display = 'block';
+    });
+    document.getElementById('goSignin').addEventListener('click', () => {
+      document.getElementById('registerWrap').style.display = 'none';
+      document.getElementById('signinWrap').style.display = 'block';
+    });
+
+    /* ── Password show/hide ── */
+    document.querySelectorAll('.pw-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const input = document.getElementById(btn.dataset.target);
+        const isHidden = input.type === 'password';
+        input.type = isHidden ? 'text' : 'password';
+        btn.querySelector('.eye-show').style.display = isHidden ? 'none' : '';
+        btn.querySelector('.eye-hide').style.display = isHidden ? '' : 'none';
+      });
+    });
+
+    /* ── Helpers ── */
+    function getUsers() { try { return JSON.parse(localStorage.getItem('vyom_users') || '{}'); } catch { return {}; } }
+    function saveUsers(u) { localStorage.setItem('vyom_users', JSON.stringify(u)); }
+
+    function showError(id, msg) {
+      const el = document.getElementById(id);
+      el.textContent = msg;
+      el.style.display = msg ? 'block' : 'none';
+    }
+
+    /* ── Register ── */
+    document.getElementById('registerForm').addEventListener('submit', e => {
+      e.preventDefault();
+      const username = document.getElementById('regUsername').value.trim();
+      const password = document.getElementById('regPassword').value;
+      const confirm  = document.getElementById('regConfirm').value;
+
+      if (!username || username.length < 3) { showError('regError', 'Username must be at least 3 characters.'); return; }
+      if (/\s/.test(username)) { showError('regError', 'Username cannot contain spaces.'); return; }
+      if (password.length < 6) { showError('regError', 'Password must be at least 6 characters.'); return; }
+      if (password !== confirm) { showError('regError', 'Passwords do not match.'); return; }
+
+      const users = getUsers();
+      if (users[username.toLowerCase()]) { showError('regError', 'Username already taken. Please choose another.'); return; }
+
+      /* Simple hash — not cryptographic but fine for client-side demo */
+      users[username.toLowerCase()] = { username, passwordHash: btoa(password) };
+      saveUsers(users);
+
+      /* Auto sign in after register */
+      localStorage.setItem('vyom_user', username);
+      window.location.replace('index.html');
+    });
+
+    /* ── Sign In ── */
+    document.getElementById('signinForm').addEventListener('submit', e => {
+      e.preventDefault();
+      const username = document.getElementById('siUsername').value.trim();
+      const password = document.getElementById('siPassword').value;
+
+      if (!username || !password) { showError('siError', 'Please fill in both fields.'); return; }
+
+      const users = getUsers();
+      const user  = users[username.toLowerCase()];
+      if (!user) { showError('siError', 'No account found with that username.'); return; }
+      if (user.passwordHash !== btoa(password)) { showError('siError', 'Incorrect password. Please try again.'); return; }
+
+      localStorage.setItem('vyom_user', user.username);
+      window.location.replace('index.html');
+    });
+  </script>
+</body>
+</html>
