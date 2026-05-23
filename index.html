@@ -4,7 +4,7 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
   <title>VYOM — Beyond the Horizon</title>
-  <link rel="stylesheet" href="/style.css"/>
+  <link rel="stylesheet" href="style.css"/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Outfit:wght@200;300;400;500&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 </head>
@@ -70,22 +70,29 @@
   <nav class="nav">
     <div class="nav-logo"><span class="logo-symbol">✦</span></div>
     <ul class="nav-links">
-      <li><a href="/index.html" class="nav-active">Home</a></li>
-      <li><a href="/about.html">About</a></li>
-      <li><a href="/privacy.html">Privacy</a></li>
-      <li><a href="/faq.html">FAQ</a></li>
+      <li><a href="index.html" class="nav-active">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
+      <li><a href="faq.html">FAQ</a></li>
     </ul>
     <div class="nav-right">
+      <!-- User chip — shown after login -->
+      <div class="user-chip" id="userChip" style="display:none">
+        <div class="user-avatar" id="userAvatar"></div>
+        <span class="user-name" id="userName"></span>
+        <div class="user-dropdown" id="userDropdown">
+          <button class="user-dropdown-item logout" id="logoutBtn">Sign Out</button>
+        </div>
+      </div>
       <button class="nav-cta" id="getVyomPlusBtn">Get VYOM+</button>
-      <!-- 3-dot menu button -->
       <button class="three-dot-btn" id="threeDotBtn" aria-label="More options">
         <span></span><span></span><span></span>
       </button>
+      <!-- Hamburger (mobile only) -->
+      <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-    <!-- Hamburger (mobile only) -->
-    <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
   </nav>
 
   <!-- ── 3-DOT DROPDOWN MENU ── -->
@@ -126,10 +133,15 @@
 
   <!-- Mobile drawer -->
   <div class="mobile-nav-drawer" id="mobileDrawer">
-    <a href="/index.html" class="nav-active">Home</a>
-    <a href="/about.html">About</a>
-    <a href="/privacy.html">Privacy</a>
-    <a href="/faq.html">FAQ</a>
+    <div class="mobile-user-row" id="mobileUserRow" style="display:none">
+      <div class="mobile-user-avatar" id="mobileUserAvatar"></div>
+      <span class="mobile-user-name" id="mobileUserName"></span>
+    </div>
+    <hr id="mobileUserHr" style="display:none"/>
+    <a href="index.html" class="nav-active">Home</a>
+    <a href="about.html">About</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="faq.html">FAQ</a>
     <hr/>
     <a href="#" id="mobileVyomPlusBtn" style="color:var(--gold);">Get VYOM+ ✦</a>
     <hr/>
@@ -139,6 +151,8 @@
     <a href="#" id="mobileHistory">History</a>
     <a href="#" id="mobileBookmarks">View Bookmarks</a>
     <a href="#" id="mobileAddBookmark">Add Bookmark</a>
+    <hr id="mobileLogoutHr" style="display:none"/>
+    <a href="#" id="mobileLogoutBtn" style="display:none;color:rgba(255,100,100,.7);">Sign Out</a>
   </div>
 
   <!-- ── HERO ── -->
@@ -261,6 +275,6 @@
     </div>
   </div>
 
-  <script src="/script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
